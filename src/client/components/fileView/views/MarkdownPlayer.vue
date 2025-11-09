@@ -44,23 +44,25 @@ onMounted( async ()=>{
 
 <style scoped>
 .title{
-  border: var(--markdown-player-border);
+  border: 1px solid var(--main-border-c);
   border-bottom: none;
-  border-radius: 0.8rem 0.8rem 0 0;
-  width: calc(100% - 2rem);
-  padding: 0.5rem 1rem;
-  background-color: var(--markdown-player-title-bgc);
-  font-size: 0.9rem;
-  font-weight: bolder;
+  border-radius: 4px 4px 0 0;
+  width: calc(100% - 32px);
+  padding: 12px 16px;
+  background-color: rgba(0, 0, 0, 0.02);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.0178571429em;
 }
 .body{
-  border: var(--markdown-player-border);
-  border-radius: 0 0 0.8rem 0.8rem;
-  padding: 1rem;
-  width: calc(100% - 2rem);
+  border: 1px solid var(--main-border-c);
+  border-radius: 0 0 4px 4px;
+  padding: 16px;
+  width: calc(100% - 32px);
   overflow-x: hidden;
+  background-color: var(--mian-box-bgc);
 }
 .markdown{
-  padding: 1rem 0;
+  padding: 16px 0;
 }
 </style>

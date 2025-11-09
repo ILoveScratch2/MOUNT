@@ -35,12 +35,14 @@ onMounted( async ()=>{
 
 <style scoped>
 .pdf-body{
-  border: var(--pdf-player-border);
-  border-radius: 0.8rem;
-  padding: 0.8rem 0;
+  border: 1px solid var(--main-border-c);
+  border-radius: 4px;
+  padding: 16px 0;
   height: 70vh;
+  background-color: var(--mian-box-bgc);
+  box-shadow: var(--mian-box-shadow);
 }
 .pdf{
-  padding: 1rem 0;
+  padding: 16px 0;
 }
 </style>

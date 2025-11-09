@@ -38,25 +38,30 @@ onMounted( async ()=>{
 
 <style scoped>
 .title{
-  border: var(--pre-text-player-border);
+  border: 1px solid var(--main-border-c);
   border-bottom: none;
-  border-radius: 0.8rem 0.8rem 0 0;
-  width: calc(100% - 2rem);
-  padding: 0.5rem 1rem;
-  background-color: var(--pre-text-player-title-bgc);
-  font-size: 0.9rem;
-  font-weight: bolder;
+  border-radius: 4px 4px 0 0;
+  width: calc(100% - 32px);
+  padding: 12px 16px;
+  background-color: rgba(0, 0, 0, 0.02);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.0178571429em;
 }
 .body{
-  border: var(--pre-text-player-border);
-  border-radius: 0 0 0.8rem 0.8rem;
-  padding: 1rem;
-  width: calc(100% - 2rem);
+  border: 1px solid var(--main-border-c);
+  border-radius: 0 0 4px 4px;
+  padding: 16px;
+  width: calc(100% - 32px);
   max-height: 70vh;
   margin: 0;
   overflow: auto;
+  background-color: var(--mian-box-bgc);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 .pre-text{
-  padding: 1rem 0;
+  padding: 16px 0;
 }
 </style>

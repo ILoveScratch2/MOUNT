@@ -42,5 +42,9 @@ function getToPath(index: number) {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 4px;
+  padding: 12px 0;
+  font-size: 0.875rem;
+  color: var(--f-color-1);
 }
 </style>

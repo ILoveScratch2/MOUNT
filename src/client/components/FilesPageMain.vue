@@ -25,7 +25,6 @@ const content = computed(()=>frontmatter.value.flistData?.content);
       <FContent v-if="content" :content="content" style="padding: 1rem"></FContent>
     </div>
     <div class="footer">
-      <FLink to="https://github.com/jianjianai/FList">由 FList 强力驱动</FLink>
     </div>
 <!--    消息弹出框-->
     <Notification></Notification>
@@ -35,23 +34,27 @@ const content = computed(()=>frontmatter.value.flistData?.content);
 <style scoped>
 .page-main{
   background-color: var(--page-bgc);
-  padding: 0 2%;
+  padding: 0;
   min-height: 100vh;
 }
 .page-layouts {
   margin: 0 auto;
-  max-width: 980px;
+  max-width: 1200px;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  min-height: calc(100vh - 6rem);
+  gap: 24px;
+  min-height: calc(100vh - 80px);
+  padding-top: 24px;
 }
 .footer{
-  height: 6rem;
+  height: 80px;
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 16px;
   align-items: center;
+  color: var(--f-color-1);
+  font-size: 0.875rem;
 }
 
 </style>

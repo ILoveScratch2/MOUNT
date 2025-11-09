@@ -24,16 +24,20 @@ import CloseSvg from "../../imgs/ui/CloseSvg.vue";
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.3rem;
-  height: 1.3rem;
-  border-radius: 0.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-button:hover{
-  background-color: var(--notification-bg-close-h);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.close-button:active{
+  background-color: rgba(0, 0, 0, 0.12);
 }
 .close-icon{
-  width: 0.7rem;
-  height: 0.7rem;
+  width: 18px;
+  height: 18px;
 }
 .close{
   display: flex;
@@ -46,7 +50,8 @@ import CloseSvg from "../../imgs/ui/CloseSvg.vue";
   color: var(--tip-color-error);
 }
 .icon-svg{
-  width: 1.6rem;
+  width: 24px;
+  height: 24px;
 }
 .icon{
   display: flex;
@@ -56,38 +61,49 @@ import CloseSvg from "../../imgs/ui/CloseSvg.vue";
   flex: 1;
   width: 0;
   word-wrap: break-word;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
 }
 .notification{
-  background-color: var(--notification-bgc);
-  box-shadow: var(--notification-shadow);
-  border-radius: 0.8rem;
-  padding: 0.8rem;
+  background-color: #323232;
+  color: #ffffff;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 
+              0px 6px 10px 0px rgba(0,0,0,0.14), 
+              0px 1px 18px 0px rgba(0,0,0,0.12);
+  border-radius: 4px;
+  padding: 14px 16px;
   display: flex;
   align-items: stretch;
-  gap: 0.5rem;
-  width: 28rem;
-  margin: 0.5rem;
-  max-width: calc(100vw - 2.6rem);
+  gap: 12px;
+  min-width: 288px;
+  max-width: 568px;
+  margin: 8px;
+  max-width: calc(100vw - 32px);
 }
 .notification-list{
   height: 0;
   position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1000;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*动画*/
 .list-move, /* 对移动中的元素应用的过渡 */
 .list-enter-active,
 .list-leave-active {
-  transition: all 0.5s ease;
+  transition: all 280ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateY(100%);
 }
 
 /* 确保将离开的元素从布局流中删除

@@ -140,13 +140,16 @@ const showChildren = computed(()=>{
   opacity: 0;
   transform: translateY(0.1em) rotate(0deg);
   color: var(--f-color-1);
-  transition: opacity 0.25s ease,transform 0.25s ease;
+  transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1),
+              transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .thc{
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .thc:hover .sort-icon{
-  opacity: 0.5;
+  opacity: 0.54;
 }
 .thc .sort-icon.asc{
   transform: translateY(0.1rem) rotate(-135deg);
@@ -158,30 +161,31 @@ const showChildren = computed(()=>{
 }
 @media (min-width: 768px) {
   .th .t-size{
-    border-right: 0.2rem solid rgba(0, 0, 0, 0);
-    padding-right: 0.5rem;
-    transition: border-right-color 0.25s ease;
+    border-right: 1px solid rgba(0, 0, 0, 0);
+    padding-right: 8px;
+    transition: border-right-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .th:hover .t-size{
-    border-right: 0.2rem solid var(--main-border-c);
+    border-right: 1px solid var(--main-border-c);
   }
 }
 .th .t-name{
-  border-right: 0.2rem solid rgba(0, 0, 0, 0);
-  padding-right: 0.5rem;
-  transition: border-right-color 0.25s ease;
+  border-right: 1px solid rgba(0, 0, 0, 0);
+  padding-right: 8px;
+  transition: border-right-color 280ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .th:hover .t-name{
-  border-right: 0.2rem solid var(--main-border-c);
+  border-right: 1px solid var(--main-border-c);
 }
 
 .th .t-name,.th .t-size,.th .t-up-item{
-  font-weight: bold;
+  font-weight: 500;
   color: var(--f-color-1);
   align-items: center;
   flex-direction: row;
-  gap: 0.4rem;
-
+  gap: 8px;
+  font-size: 0.875rem;
+  letter-spacing: 0.0178571429em;
 }
 .th .t-size,.th .t-up-item{
   justify-content: flex-end;
@@ -190,10 +194,11 @@ const showChildren = computed(()=>{
   display: flex;
 }
 .td .t-size,.td .t-up-item{
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  color: var(--f-color-1);
 }
 .td{
-  gap: 0.6rem;
+  gap: 12px;
 }
 
 .file-name{
@@ -204,7 +209,7 @@ const showChildren = computed(()=>{
 .files{
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 4px;
 }
 .th,.td{
   display: flex;
@@ -212,17 +217,18 @@ const showChildren = computed(()=>{
   align-items: center;
 }
 .th{
-  padding: 0 0.4rem 0.4rem 0.4rem;
+  padding: 0 8px 12px 8px;
+  border-bottom: 1px solid var(--main-border-c);
 }
 .t-name{
   flex: 1;
   width: 0rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 12px;
 }
 .file-icon{
-  font-size: 1.5rem;
+  font-size: 24px;
   flex-shrink: 0;
   color: var(--file-icon-c);
 }
