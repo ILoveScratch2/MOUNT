@@ -5,6 +5,7 @@ This repository serves as a mirror for the open source software projects.
 ## Projects Included
 - **OpenList & its Clients** - A file list program.
 - **TouchFish & its Community Releases** - A simple chat application and its community versions.
+- **TouchMouse** - An improved GUI of TouchFish with additional features.
 - **Cloud Studio Chat** - A fast, lightweight chat application.
 - **Embarcadero Dev-C++** - An integrated development environment for C/C++ programming.
 - **XiaoLoong Dev-C++** - A modified version of Dev-C++.
