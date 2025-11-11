@@ -28,7 +28,7 @@ async function netlifyReleaseConfigurationFile(destPath: string) {
         "version": 1,
         "functions": [
             {
-                "path": "/api/netlifydown/*",
+                "path": "/api/net/*",
                 "name": "flist server handler",
                 "function": "server"
             }
@@ -62,7 +62,7 @@ onExtendsBundlerOptions(async (options, app) => {
 });
 
 async function netlifyDownProxyInner(sourceUrl: string, fileName: string, contentType?: string): Promise<string> {
-    const downProxyPath = `/api/netlifydown/${hashCode(sourceUrl)}/${encodeURIComponent(fileName)}`;
+    const downProxyPath = `/api/net/${hashCode(sourceUrl)}/${encodeURIComponent(fileName)}`;
     proxyConfig[downProxyPath] = sourceUrl;
     return downProxyPath;
 }
