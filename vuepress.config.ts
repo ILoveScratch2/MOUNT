@@ -118,8 +118,32 @@ export default defineUserConfig({
       })
     },
     {
+      mountPath: "/TouchFish/Mobile （不推荐）",
+      analysis: githubReleasesFilesAnalysis({ user: "pztsdy", repository: "TouchFish-for-mobile" , authorizationToken: process.env.githubToken,}),
+      // 下载代理配置,支持多个平台，参考:https://jjaw.cn/2024/8/3/flist-config-porxy/
+      // 这个是为了解决github的国内下载慢的问题，和跨域问题，建议配置，不然pdf，txt，md等文件因为跨域无法预览
+      // 如果你使用的不是 cloudflare Pages 部署需要删掉这一行，因为如果不是cloudflare Pages部署，这个代理是无法正常工作的
+      downProxy: netlifyDownProxy(),
+    },
+    {
+      mountPath: "/TouchMouse",
+      analysis: githubReleasesFilesAnalysis({ user: "mouse-m", repository: "TouchMouse" , authorizationToken: process.env.githubToken,}),
+      // 下载代理配置,支持多个平台，参考:https://jjaw.cn/2024/8/3/flist-config-porxy/
+      // 这个是为了解决github的国内下载慢的问题，和跨域问题，建议配置，不然pdf，txt，md等文件因为跨域无法预览
+      // 如果你使用的不是 cloudflare Pages 部署需要删掉这一行，因为如果不是cloudflare Pages部署，这个代理是无法正常工作的
+      downProxy: netlifyDownProxy(),
+    },
+    {
       mountPath: "/Cloud Studio Chat",
       analysis: githubReleasesFilesAnalysis({ user: "pztsdy", repository: "Cloud-Studio-Chat" , authorizationToken: process.env.githubToken,}),
+      // 下载代理配置,支持多个平台，参考:https://jjaw.cn/2024/8/3/flist-config-porxy/
+      // 这个是为了解决github的国内下载慢的问题，和跨域问题，建议配置，不然pdf，txt，md等文件因为跨域无法预览
+      // 如果你使用的不是 cloudflare Pages 部署需要删掉这一行，因为如果不是cloudflare Pages部署，这个代理是无法正常工作的
+      downProxy: netlifyDownProxy(),
+    },
+    {
+      mountPath: "/LightType",
+      analysis: githubReleasesFilesAnalysis({ user: "JohnChiao75", repository: "LightType" , authorizationToken: process.env.githubToken,}),
       // 下载代理配置,支持多个平台，参考:https://jjaw.cn/2024/8/3/flist-config-porxy/
       // 这个是为了解决github的国内下载慢的问题，和跨域问题，建议配置，不然pdf，txt，md等文件因为跨域无法预览
       // 如果你使用的不是 cloudflare Pages 部署需要删掉这一行，因为如果不是cloudflare Pages部署，这个代理是无法正常工作的
@@ -148,18 +172,18 @@ export default defineUserConfig({
       // 这个是为了解决github的国内下载慢的问题，和跨域问题，建议配置，不然pdf，txt，md等文件因为跨域无法预览
       // 如果你使用的不是 cloudflare Pages 部署需要删掉这一行，因为如果不是cloudflare Pages部署，这个代理是无法正常工作的
       downProxy: netlifyDownProxy(),
-    }, 
+    },
     {
-      mountPath: "/TouchMouse",
-      analysis: githubReleasesFilesAnalysis({ user: "mouse-m", repository: "TouchMouse" , authorizationToken: process.env.githubToken,}),
+      mountPath: "/Notepad++",
+      analysis: githubReleasesFilesAnalysis({ user: "notepad-plus-plus", repository: "notepad-plus-plus" , authorizationToken: process.env.githubToken,}),
       // 下载代理配置,支持多个平台，参考:https://jjaw.cn/2024/8/3/flist-config-porxy/
       // 这个是为了解决github的国内下载慢的问题，和跨域问题，建议配置，不然pdf，txt，md等文件因为跨域无法预览
       // 如果你使用的不是 cloudflare Pages 部署需要删掉这一行，因为如果不是cloudflare Pages部署，这个代理是无法正常工作的
       downProxy: netlifyDownProxy(),
     },
     {
-      mountPath: "/Notepad++",
-      analysis: githubReleasesFilesAnalysis({ user: "notepad-plus-plus", repository: "notepad-plus-plus" , authorizationToken: process.env.githubToken,}),
+      mountPath: "/Luogu-to-Vjudge",
+      analysis: githubReleasesFilesAnalysis({ user: "Justskr", repository: "Luogu-to-Vjudge" , authorizationToken: process.env.githubToken,}),
       // 下载代理配置,支持多个平台，参考:https://jjaw.cn/2024/8/3/flist-config-porxy/
       // 这个是为了解决github的国内下载慢的问题，和跨域问题，建议配置，不然pdf，txt，md等文件因为跨域无法预览
       // 如果你使用的不是 cloudflare Pages 部署需要删掉这一行，因为如果不是cloudflare Pages部署，这个代理是无法正常工作的
