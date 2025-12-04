@@ -9,10 +9,11 @@ This repository serves as a mirror for the open source software projects.
 - **Cloud Studio Chat** - A fast, lightweight chat application.
 - **Embarcadero Dev-C++** - An integrated development environment for C/C++ programming.
 - **XiaoLoong Dev-C++** - A modified version of Dev-C++.
-- **RedPanda Dev-C++** - Another modified version of Dev-C++.
 - **TDM GCC (MinGW)** - A  C++ compiler suite for Windows.
 - **Notepad++** - A popular text and source code editor.
 - **VSCodium** - A community-driven, freely-licensed binary distribution of Microsoft's VSCode.
+- **LightType** - A lightweight markdown editor software.
+- **Luogu-to-Vjudge** - A tool for converting Luogu to Vjudge.
 
 VISIT [ILoveScratch MIRROR](https://mirror.ilovescratch.dpdns.org) FOR MORE INFORMATION.
 
