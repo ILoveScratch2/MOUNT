@@ -1,0 +1,6 @@
+# Netlify redirects file
+# Handle API proxy routes
+/api/net/*  /.netlify/edge-functions/server  200
+
+# SPA fallback - redirect all other routes to index.html
+/*  /index.html  200
