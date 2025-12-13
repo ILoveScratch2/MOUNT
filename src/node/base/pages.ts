@@ -60,7 +60,7 @@ export function createFolderPage(app: App, path: string, folder: Folder): Promis
     })
     const frontmatter: FolderPageFrontmatter = {
         layout: 'Folder',
-        title: folder.title,
+        title: folder.title || folder.name,
         flistData: {
             name: folder.name,
             size: folder.size,

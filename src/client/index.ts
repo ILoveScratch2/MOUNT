@@ -13,6 +13,15 @@ export default defineClientConfig({
             const vuetifyModule = await import("./plugins/vuetify.js");
             const vuetify = vuetifyModule.default;
             app.use(vuetify);
+            router.beforeEach((to) => {
+                if (!to.path.endsWith('/') && !to.path.includes('.')) {
+                    return {
+                        path: to.path + '/',
+                        query: to.query,
+                        hash: to.hash,
+                    }
+                }
+            })
         }
     },
     setup() {},
