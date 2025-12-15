@@ -1,0 +1,16 @@
+[build]
+  publish = ".vuepress/dist"
+  command = "pnpm run build"
+
+# Handle API proxy routes first
+[[redirects]]
+  from = "/api/net/*"
+  to = "/.netlify/edge-functions/server"
+  status = 200
+
+# SPA fallback - serve index.html for all routes
+# This allows client-side routing to handle the trailing slash logic
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

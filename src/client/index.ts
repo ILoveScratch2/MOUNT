@@ -13,6 +13,16 @@ export default defineClientConfig({
             const vuetifyModule = await import("./plugins/vuetify.js");
             const vuetify = vuetifyModule.default;
             app.use(vuetify);
+            
+            // Handle initial URL without trailing slash before router resolves
+            // This prevents showing 404 page when accessing URLs directly
+            const currentPath = window.location.pathname;
+            if (!currentPath.endsWith('/') && !currentPath.includes('.')) {
+                // Replace the current URL with trailing slash before Vue Router processes it
+                const newPath = currentPath + '/' + window.location.search + window.location.hash;
+                window.history.replaceState(null, '', newPath);
+            }
+            
             router.beforeEach((to) => {
                 if (!to.path.endsWith('/') && !to.path.includes('.')) {
                     return {
