@@ -12,6 +12,8 @@ export default defineClientConfig({
         if (!__VUEPRESS_SSR__) {
             import("./plugins/vuetify.js").then((vuetifyModule) => {
                 app.use(vuetifyModule.default);
+            }).catch((error) => {
+                console.error("Failed to load Vuetify:", error);
             });
         }
     },
