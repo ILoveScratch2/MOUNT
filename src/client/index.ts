@@ -17,9 +17,12 @@ export default defineClientConfig({
             // Handle initial URL without trailing slash before router resolves
             // This prevents showing 404 page when accessing URLs directly
             const currentPath = window.location.pathname;
-            if (!currentPath.endsWith('/') && !currentPath.includes('.')) {
-                // Replace the current URL with trailing slash before Vue Router processes it
-                const newPath = currentPath + '/' + window.location.search + window.location.hash;
+            // Only add trailing slash if path doesn't end with / and doesn't end with a file extension
+            if (!currentPath.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(currentPath)) {
+                // Use URL constructor for safer URL manipulation
+                const url = new URL(window.location.href);
+                url.pathname = currentPath + '/';
+                const newPath = url.pathname + url.search + url.hash;
                 window.history.replaceState(null, '', newPath);
             }
             
