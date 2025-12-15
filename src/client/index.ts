@@ -7,12 +7,12 @@ import "./css/main.css"
 
 if (!__VUEPRESS_SSR__) {console.log("WELCOME!")}
 export default defineClientConfig({
-    async enhance({ app, router, siteData }) {
+    enhance({ app, router, siteData }) {
         // Only initialize Vuetify on client side to avoid CSS import errors during SSR
         if (!__VUEPRESS_SSR__) {
-            const vuetifyModule = await import("./plugins/vuetify.js");
-            const vuetify = vuetifyModule.default;
-            app.use(vuetify);
+            import("./plugins/vuetify.js").then((vuetifyModule) => {
+                app.use(vuetifyModule.default);
+            });
         }
     },
     setup() {},

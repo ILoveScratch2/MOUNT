@@ -1,9 +1,0 @@
-# Netlify redirects for SPA routing
-# This ensures that all routes are handled by the client-side router
-# Note: Edge functions configured in .netlify/edge-functions/manifest.json
-# automatically take precedence over these redirect rules
-
-# Handle all routes as SPA - serve index.html
-# The status code 200 means this is a rewrite (not a redirect)
-# This allows the Vue Router to handle client-side routing
-/*    /index.html   200
