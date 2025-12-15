@@ -17,18 +17,8 @@ export default defineClientConfig({
             // Helper function to check if a path looks like a file (ends with extension)
             const hasFileExtension = (path: string) => /\.[a-zA-Z0-9]+$/.test(path);
             
-            // Handle initial URL without trailing slash before router resolves
-            // This prevents showing 404 page when accessing URLs directly
-            const currentPath = window.location.pathname;
-            // Only add trailing slash if path doesn't end with / and doesn't look like a file
-            if (!currentPath.endsWith('/') && !hasFileExtension(currentPath)) {
-                // Use URL constructor for safer URL manipulation
-                const url = new URL(window.location.href);
-                url.pathname = currentPath + '/';
-                const newPath = url.pathname + url.search + url.hash;
-                window.history.replaceState(null, '', newPath);
-            }
-            
+            // Handle client-side navigation (e.g., clicking links)
+            // Initial URL normalization is handled by a script in the HTML head
             router.beforeEach((to) => {
                 if (!to.path.endsWith('/') && !hasFileExtension(to.path)) {
                     return {

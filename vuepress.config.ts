@@ -31,7 +31,21 @@ export default defineUserConfig({
   // 网站的简介，有助于搜索引擎收录
   description: 'ILS 开源软件镜像站 - 提供各种开源软件的镜像下载服务，为用户提供快速、稳定的下载体验。',
   // 页面 <head> 标签内添加的额外标签。 不要修改/logo.png可以替换掉这个文件，删除logo.png会导致构建出错。
-  head: [['link', { rel: 'icon', href: '/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    // Script to normalize URLs before Vue Router loads - fixes 404 flash on direct URL access
+    ['script', {}, `
+      (function() {
+        var path = window.location.pathname;
+        // Only add trailing slash if path doesn't end with / and doesn't look like a file
+        if (!path.endsWith('/') && !/\\.[a-zA-Z0-9]+$/.test(path)) {
+          var url = new URL(window.location.href);
+          url.pathname = path + '/';
+          window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+        }
+      })();
+    `]
+  ],
   // 页面预加载，所有其它页面所需的文件都会被预拉取。这对于小型站点来说是十分有帮助的，因为它会大大提升页面切换的速度。但是在你的网站有很多页面时不建议你这么做。
   // 简单来说就是，如果你的文件不多就可以打开这个选项，可以大大提高页面切换的速度，如果文件非常多就不建议打开。建议超过100个文件就不要打开这个选项。
   shouldPrefetch: false,
