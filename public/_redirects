@@ -1,0 +1,9 @@
+# Netlify redirects for SPA routing
+# This ensures that all routes are handled by the client-side router
+# while still allowing the API endpoints to work correctly
+
+# Preserve API endpoints for Netlify Edge Functions
+/api/netlifydown/*  200
+
+# Handle all other routes as SPA - serve index.html
+/*    /index.html   200
