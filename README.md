@@ -17,6 +17,9 @@ This repository serves as a mirror for the open source software projects.
 
 VISIT [ILoveScratch MIRROR](https://mirror.ilovescratch.dpdns.org) FOR MORE INFORMATION.
 
+## Deployment Notes
+
+This project is deployed on Netlify. The `public/_redirects` file is configured to handle SPA (Single Page Application) routing correctly, ensuring that direct URL access and page refreshes work properly for all routes.
 
 ## SPECIAL THANKS
 
