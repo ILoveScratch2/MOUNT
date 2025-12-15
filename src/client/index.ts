@@ -14,11 +14,14 @@ export default defineClientConfig({
             const vuetify = vuetifyModule.default;
             app.use(vuetify);
             
+            // Helper function to check if a path looks like a file (ends with extension)
+            const hasFileExtension = (path: string) => /\.[a-zA-Z0-9]+$/.test(path);
+            
             // Handle initial URL without trailing slash before router resolves
             // This prevents showing 404 page when accessing URLs directly
             const currentPath = window.location.pathname;
-            // Only add trailing slash if path doesn't end with / and doesn't end with a file extension
-            if (!currentPath.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(currentPath)) {
+            // Only add trailing slash if path doesn't end with / and doesn't look like a file
+            if (!currentPath.endsWith('/') && !hasFileExtension(currentPath)) {
                 // Use URL constructor for safer URL manipulation
                 const url = new URL(window.location.href);
                 url.pathname = currentPath + '/';
@@ -27,7 +30,7 @@ export default defineClientConfig({
             }
             
             router.beforeEach((to) => {
-                if (!to.path.endsWith('/') && !to.path.includes('.')) {
+                if (!to.path.endsWith('/') && !hasFileExtension(to.path)) {
                     return {
                         path: to.path + '/',
                         query: to.query,
