@@ -1,10 +1,21 @@
 import { createVuetify } from 'vuetify'
-// Commenting out CSS imports to test if they're causing the issue
-// import 'vuetify/styles'
-// import '@mdi/font/css/materialdesignicons.css'
 
+/**
+ * Minimal Vuetify configuration to avoid SSR/hydration issues with VuePress.
+ * 
+ * CSS imports (vuetify/styles, @mdi/font) have been removed as they cause
+ * routing issues when the page is directly accessed or refreshed.
+ * 
+ * Component and directive bulk imports have been removed to reduce overhead.
+ * If you need Vuetify components, import them individually in your Vue files:
+ * 
+ * Example:
+ *   import { VBtn, VCard } from 'vuetify/components'
+ * 
+ * For styles, you may need to import them manually in your component or
+ * add them to your custom CSS if Vuetify components are used.
+ */
 export default createVuetify({
-  // Using minimal configuration without loading all components
   theme: {
     defaultTheme: 'light',
     themes: {
