@@ -9,7 +9,8 @@ import vuetify from "./plugins/vuetify.js";
 if (!__VUEPRESS_SSR__) {console.log("WELCOME!")}
 export default defineClientConfig({
     enhance({ app, router, siteData }) {
-        // Initialize Vuetify for both SSR and client
+        // Load Vuetify without CSS imports to avoid SSR issues
+        // CSS imports have been removed from vuetify.ts
         app.use(vuetify);
     },
     setup() {},
