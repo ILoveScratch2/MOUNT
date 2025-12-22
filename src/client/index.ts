@@ -8,16 +8,9 @@ import "./css/main.css"
 if (!__VUEPRESS_SSR__) {console.log("WELCOME!")}
 export default defineClientConfig({
     enhance({ app, router, siteData }) {
-        // Only initialize Vuetify on client side to avoid SSR/hydration mismatch
-        // Vuetify is not used during SSR to prevent conflicts with VuePress routing
-        if (!__VUEPRESS_SSR__) {
-            // Import Vuetify dynamically only on client side
-            import("./plugins/vuetify.js").then(({ default: vuetify }) => {
-                app.use(vuetify);
-            }).catch((error) => {
-                console.error("Failed to load Vuetify plugin:", error);
-            });
-        }
+        // Vuetify initialization has been removed as it was causing routing issues
+        // and is not currently being used in any components.
+        // If Vuetify is needed in the future, components can be imported individually.
     },
     setup() {},
     rootComponents: [],
