@@ -14,6 +14,8 @@ export default defineClientConfig({
             // Import Vuetify dynamically only on client side
             import("./plugins/vuetify.js").then(({ default: vuetify }) => {
                 app.use(vuetify);
+            }).catch((error) => {
+                console.error("Failed to load Vuetify plugin:", error);
             });
         }
     },
