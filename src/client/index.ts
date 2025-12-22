@@ -4,14 +4,18 @@ import NotFound from "./layouts/NotFound.vue";
 import Folder from "./layouts/Folder.vue";
 import File from "./layouts/File.vue";
 import "./css/main.css"
-import vuetify from "./plugins/vuetify.js";
 
 if (!__VUEPRESS_SSR__) {console.log("WELCOME!")}
 export default defineClientConfig({
     enhance({ app, router, siteData }) {
-        // Initialize Vuetify with minimal configuration (no CSS/component imports)
-        // This prevents SSR/hydration issues while keeping theme configuration available
-        app.use(vuetify);
+        // Only initialize Vuetify on client side to avoid SSR/hydration mismatch
+        // Vuetify is not used during SSR to prevent conflicts with VuePress routing
+        if (!__VUEPRESS_SSR__) {
+            // Import Vuetify dynamically only on client side
+            import("./plugins/vuetify.js").then(({ default: vuetify }) => {
+                app.use(vuetify);
+            });
+        }
     },
     setup() {},
     rootComponents: [],
