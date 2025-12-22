@@ -7,12 +7,14 @@ import "./css/main.css"
 
 if (!__VUEPRESS_SSR__) {console.log("WELCOME!")}
 export default defineClientConfig({
-    async enhance({ app, router, siteData }) {
-        // Only initialize Vuetify on client side to avoid CSS import errors during SSR
+    enhance({ app, router, siteData }) {
+        // Minimal config for debugging - logging router state
         if (!__VUEPRESS_SSR__) {
-            const vuetifyModule = await import("./plugins/vuetify.js");
-            const vuetify = vuetifyModule.default;
-            app.use(vuetify);
+            console.log('[DEBUG] Client-side enhance called');
+            console.log('[DEBUG] Current route:', router.currentRoute.value);
+            router.afterEach((to, from) => {
+                console.log('[DEBUG] Route changed:', from.path, '->', to.path);
+            });
         }
     },
     setup() {},
