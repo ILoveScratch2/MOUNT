@@ -1,0 +1,155 @@
+@import "./github-markdown.css";
+@import "./plugin-nprogress.css";
+
+/* Material Design - Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root{
+    /**图标颜色*/
+    --logo-color: #00b3ff;
+
+    /**主题颜色的定义 - Material Design*/
+    --t-color-1:#00b2ff;
+    --md-primary: #00b3ff;
+    --md-primary-dark: #0090cc;
+    --md-secondary: #5988ff;
+    --md-accent: #ca6cff;
+
+    /** 字体颜色的一些定义 - Material Design Typography */
+    --f-color-0: rgba(0, 0, 0, 0.87);
+    --f-color-1: rgba(0, 0, 0, 0.60);
+    --f-color-2: rgba(0, 0, 0, 0.38);
+
+    /** 布局主要颜色 - Material Design Elevation */
+    --page-bgc: #f5f5f5;
+    --mian-box-bgc: #ffffff;
+    --mian-box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    --mian-box-shadow-hover: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12);
+
+    /*如果需要hover可点击提示颜色 - Material Design Ripple*/
+    --main-hover-bg: rgba(0, 0, 0, 0.04);
+    /*如果需要框的颜色*/
+    --main-border-c: rgba(0, 0, 0, 0.12);
+
+    /**提示功能颜色 - Material Design Colors*/
+    --tip-color-error: #ca1414;
+    --tip-color-success: #4c9c4c;
+    --tip-color-warning: #f0ad4e;
+    --tip-color-info: #5bc0de;
+}
+
+/**---------------文件列表相关 Folder.vue--------------------*/
+:root{
+    --file-icon-c:var(--t-color-1);
+    --folder-icon-c: #5988ff;
+}
+/**---------------通知相关 Notification.vue--------------------*/
+:root{
+    /** 通知的颜色 */
+    --notification-bgc: var(--mian-box-bgc);
+    --notification-shadow: var(--mian-box-shadow);
+    --notification-bg-close-h: var(--main-hover-bg)
+}
+
+
+/**---------------按钮相关 FButtonLink.vue - Material Design Button--------------------*/
+:root{
+    /** 按钮的颜色 */
+    --a-button-bg: #e3f2fd;
+    --a-button-bg-h: #bbdefb;
+    --a-button-c: #1976d2;
+    --a-button-bg-hover: rgba(25, 118, 210, 0.04);
+}
+.button-color-grep1{
+    /*按钮主题颜色2*/
+    --a-button-bg: #f3e5f5;
+    --a-button-bg-h: #e1bee7;
+    --a-button-c: #9c27b0;
+}
+
+/**---------------MarkdownPlayer.vue--------------------*/
+:root{
+    --markdown-player-border: 0.1rem solid var(--main-border-c);
+    --markdown-player-title-bgc: #f0f2f4;
+}
+
+/**---------------PDFPlayer.vue--------------------*/
+:root{
+    --pdf-player-border: 0.1rem solid var(--main-border-c);
+}
+
+/**---------------PreTextPlayer.vue--------------------*/
+:root{
+    --pre-text-player-border: 0.1rem solid var(--main-border-c);
+    --pre-text-player-title-bgc: #f0f2f4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+html,body,#app{
+    margin:0;
+    border:0;
+    padding:0;
+    width: 100vw;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+}
+:root{
+    font-size: 16px;
+    color:var(--f-color-0);
+}
+
+/* Material Design Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+h1 { font-size: 2.125rem; letter-spacing: 0em; }
+h2 { font-size: 1.5rem; letter-spacing: 0.0073529412em; }
+h3 { font-size: 1.25rem; letter-spacing: 0em; }
+h4 { font-size: 1rem; letter-spacing: 0.0125em; }
+h5 { font-size: 0.875rem; letter-spacing: 0.0178571429em; }
+h6 { font-size: 0.75rem; letter-spacing: 0.0166666667em; }
+
+/* Material Design Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Material Design Focus States */
+*:focus-visible {
+    outline: 2px solid var(--md-primary);
+    outline-offset: 2px;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
