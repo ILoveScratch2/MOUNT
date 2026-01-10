@@ -13,7 +13,8 @@ This repository serves as a mirror for the open source software projects.
 - **Notepad++** - A popular text and source code editor.
 - **VSCodium** - A community-driven, freely-licensed binary distribution of Microsoft's VSCode.
 - **LightType** - A lightweight markdown editor software.
-- **Luogu-to-Vjudge** - A tool for converting Luogu to Vjudge.
+- **tuack-ng** - Better Tuack project.
+- **八中重开模拟器（recallbj8z）** - An simple emulator game.
 
 VISIT [ILoveScratch MIRROR](https://mirror.ilovescratch.dpdns.org) FOR MORE INFORMATION.
 
